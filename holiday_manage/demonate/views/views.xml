@@ -1,0 +1,59 @@
+<openerp>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="demonate.list">
+      <field name="name">demonate list</field>
+      <field name="model">demonate.demonate</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="demonate.action_window">
+      <field name="name">demonate window</field>
+      <field name="res_model">demonate.demonate</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="demonate.action_server">
+      <field name="name">demonate server</field>
+      <field name="model_id" ref="model_demonate_demonate"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="demonate" id="demonate.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="demonate.menu_1" parent="demonate.menu_root"/>
+    <menuitem name="Menu 2" id="demonate.menu_2" parent="demonate.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="demonate.menu_1_list" parent="demonate.menu_1"
+              action="demonate.action_window"/>
+    <menuitem name="Server to list" id="demonate" parent="demonate.menu_2"
+              action="demonate.action_server"/>
+    -->
+  </data>
+</openerp>
