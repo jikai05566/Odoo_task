@@ -11,9 +11,9 @@
                         <field name="state" widget="statusbar"/>
                     </header>
                     <group string="">
-                        <field name="num"/>
+                        <field name="employee_id"/>
                         <field name="employee_name" attrs="{'readonly': [('state', '=' , 'done')]}"/>
-                        <field name="day" attrs="{'readonly': [('state', '=' , 'done')]}"/>
+                        <field name="holiday_send_count" attrs="{'readonly': [('state', '=' , 'done')]}"/>
                         <button name="do_cancel" string="Cancel" type="object"/>
                     </group>
                 </form>
@@ -24,9 +24,9 @@
             <field name="model">holiday</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="num"/>
+                    <field name="employee_id"/>
                     <field name="employee_name"/>
-                    <field name="day"/>
+                    <field name="holiday_send_count"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft"/>
 
                 </tree>

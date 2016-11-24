@@ -14,9 +14,9 @@ class Holiday(models.Model):
     def _get_default_id(self):
         return self.env['ir.sequence'].next_by_code('holiday')
 
-    num = fields.Integer(string='Number', readonly=True, default=_get_default_id)
+    employee_id = fields.Integer(string='Number', readonly=True, default=_get_default_id)
     employee_name= fields.Many2one("hr.employee", string='Employee')
-    day = fields.Integer(string='Days')
+    holiday_send_count = fields.Integer(string='Days')
     state = fields.Selection([('draft', 'Draft'),
                               ('done', 'Done')],
                              default='draft', string='State')
@@ -24,7 +24,7 @@ class Holiday(models.Model):
     @api.multi
     def send_holiday(self):
         '''发假按钮'''
-        self.employee_name.is_set_holiday = True
+        self.employee_name.whether_send_holiday = True
         self.write({'state': 'done'})
 
     @api.multi
