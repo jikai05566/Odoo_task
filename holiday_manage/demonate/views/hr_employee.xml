@@ -10,6 +10,12 @@
                         <field name="name"/>
                         <field name="is_set_holiday"/>
                         <field name="holiday_count"/>
+                        <field name="leave_record" mode="tree">
+                            <tree>
+                                <field name="leave_date"/>
+                                <field name="leave_record_day"/>
+                            </tree>
+                        </field>
                     </group>
                 </form>
             </field>
@@ -22,6 +28,7 @@
                     <field name="name"/>
                     <field name="is_set_holiday"/>
                     <field name="holiday_count"/>
+                    <field name="leave_record"/>
                 </tree>
             </field>
         </record>

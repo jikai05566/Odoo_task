@@ -12,8 +12,9 @@
                     </header>
                     <group string="">
                         <field name="num"/>
-                        <field name="employee" attrs="{'readonly': [('state', '=' , 'done')]}"/>
+                        <field name="employee_name" attrs="{'readonly': [('state', '=' , 'done')]}"/>
                         <field name="day" attrs="{'readonly': [('state', '=' , 'done')]}"/>
+                        <button name="do_cancel" string="Cancel" type="object"/>
                     </group>
                 </form>
             </field>
@@ -24,7 +25,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="num"/>
-                    <field name="employee"/>
+                    <field name="employee_name"/>
                     <field name="day"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft"/>
 

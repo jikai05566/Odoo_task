@@ -19,6 +19,6 @@
                 </tree>
             </field>
         </record>
-        <menuitem id="" parent="" action=></menuitem>
+        <menuitem id="" parent="" action></menuitem>
     </data>
 </openerp>

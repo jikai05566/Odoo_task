@@ -15,7 +15,7 @@ class Holiday(models.Model):
         return self.env['ir.sequence'].next_by_code('holiday')
 
     num = fields.Integer(string='Number', readonly=True, default=_get_default_id)
-    employee= fields.Many2one("hr.employee", string='Employee')
+    employee_name= fields.Many2one("hr.employee", string='Employee')
     day = fields.Integer(string='Days')
     state = fields.Selection([('draft', 'Draft'),
                               ('done', 'Done')],
@@ -23,10 +23,18 @@ class Holiday(models.Model):
 
     @api.multi
     def send_holiday(self):
-        self.employee.is_set_holiday = True
+        '''发假按钮'''
+        self.employee_name.is_set_holiday = True
         self.write({'state': 'done'})
 
     @api.multi
+    def do_cancel(self):
+        '''撤销按钮'''
+        self.write({'state': 'draft'})
+        if self.env['hr.employee'].holiday_count < self.day:
+            raise ValidationError('无法撤销')
+
+    @api.multi
     def unlink(self):
-        raise ValidationError('删除错误!')
+        raise ValidationError('错误!')
 

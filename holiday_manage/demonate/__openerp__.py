@@ -30,6 +30,7 @@
         'views/hr_employee.xml',
         'views/holiday.xml',
         'views/ir_sequence_data.xml',
+        'wizard/leave_menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
