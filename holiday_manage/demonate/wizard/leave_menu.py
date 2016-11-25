@@ -12,15 +12,15 @@ class LeaveMenu(models.Model):
     _description = 'Leave Menu'
     _name = 'leave.menu'
 
-    employee_name = fields.Many2one('hr.employee', string='Employee Name')
+    employee_id = fields.Many2one('hr.employee', string='Employee Name')
     leave_count = fields.Integer(string='Holiday Number')
     leave_date = str(datetime.date.today())
 
     @api.multi
     def do_confirm(self):
         for record in self:
-            if record.leave_count > record.employee_name.holiday_count:
+            if record.leave_count > record.employee_id.holiday_count:
                 raise ValidationError('Error')
             record.env['leave.record'].create(
-                {'leave_record_employee': self.employee_name.id, 'leave_record_day': self.leave_count,
+                {'employee_id': self.employee_id.id, 'leave_record_day': self.leave_count,
                  'leave_date': self.leave_date})

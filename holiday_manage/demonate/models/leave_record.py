@@ -11,7 +11,7 @@ class LeaveRecord(models.Model):
     _name = 'leave.record'
 
     leave_date = fields.Date(string='Leave Date', required=True)
-    leave_record_employee = fields.Many2one('hr.employee', string='Leave Employee Name')
+    employee_id = fields.Many2one('hr.employee', string='Leave Employee Name')
     leave_record_day = fields.Integer(string='Leave Day')
 
 

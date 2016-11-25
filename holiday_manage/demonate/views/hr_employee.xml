@@ -10,7 +10,7 @@
                         <field name="name"/>
                         <field name="whether_send_holiday"/>
                         <field name="holiday_count"/>
-                        <field name="leave_record" mode="tree">
+                        <field name="leave_record_ids" mode="tree">
                             <tree>
                                 <field name="leave_date"/>
                                 <field name="leave_record_day"/>
@@ -28,7 +28,7 @@
                     <field name="name"/>
                     <field name="whether_send_holiday"/>
                     <field name="holiday_count"/>
-                    <field name="leave_record"/>
+                    <field name="leave_record_ids"/>
                 </tree>
             </field>
         </record>
