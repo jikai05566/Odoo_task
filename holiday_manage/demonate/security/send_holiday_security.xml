@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="group_send_holiday" model="res.groups">
+            <field name="name">Send Holiday Group</field>
+        </record>
+        <record id="group_hr_employee" model="res.groups">
+            <field name="name">Hr Employee Group</field>
+        </record>
+        <record id="group_leave_menu" model="res.groups">
+            <field name="name">Leave Menu Group</field>
+        </record>
+    </data>
+</openerp>

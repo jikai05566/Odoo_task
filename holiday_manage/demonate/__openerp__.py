@@ -24,7 +24,10 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/send_holiday_security.xml',
+        'security/ir.rule.xml',
+        'security/ir.model.access.xml',
+
         'views/views.xml',
         'views/templates.xml',
         'views/hr_employee.xml',
