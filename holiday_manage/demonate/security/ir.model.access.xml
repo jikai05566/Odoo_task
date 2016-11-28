@@ -17,7 +17,7 @@
             <field eval="True" name="perm_read"/>
             <field eval="True" name="perm_write"/>
             <field eval="True" name="perm_create"/>
-            <field eval="False" name="perm_unlink"/>
+            <field eval="True" name="perm_unlink"/>
         </record>
         <record model="ir.model.access" id="access_hr_employee">
             <field name="name">hr_employee</field>

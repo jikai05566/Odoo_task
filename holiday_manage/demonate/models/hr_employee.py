@@ -15,7 +15,6 @@ class HrEmployee(models.Model):
     whether_send_holiday = fields.Boolean('Set Holiday', default=False)
     holiday_count = fields.Integer(string='Holiday_count', compute='_compute_holiday_count')
     leave_record_ids = fields.One2many('leave.record', 'employee_id', string='Leave Record')
-    create_uid = fields.Many2one('res.users')
     active = fields.Boolean(default=True, string='Active')
 
     @api.depends('holiday_count')

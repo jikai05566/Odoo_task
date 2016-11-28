@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-    <data noupdate="1">
+    <data>
         <record id="send_holiday" model="ir.rule">
             <field name="name">发假单</field>
             <field name="model_id" ref="model_holiday"/>
-            <field name="domain_force">[('self.id', '=', 'create_uid.id')]</field>
-            <!--<field name="groups" eval="[']"/>-->
-            <field name="groups" eval="[(4,ref('hr_holiday_management.group_send_holiday'))]"/>
-            <field eval="True" name="perm_read"/>
-            <field eval="True" name="perm_write"/>
-            <field eval="True" name="perm_create"/>
-            <field eval="True" name="perm_unlink"/>
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+            <field name="groups" eval="[(4,ref('group_send_holiday'))]"/>
         </record>
     </data>
 </openerp>

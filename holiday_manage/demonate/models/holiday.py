@@ -17,6 +17,7 @@ class Holiday(models.Model):
     employee_num = fields.Integer(string='Number', readonly=True, default=_get_default_id)
     employee_id= fields.Many2one("hr.employee", string='Employee')
     send_days = fields.Integer(string='Days')
+    create_uid = fields.Many2one('res.users', default=lambda self: self.env.user)
     state = fields.Selection([('draft', 'Draft'),
                               ('done', 'Done')],
                              default='draft', string='State')
@@ -34,7 +35,7 @@ class Holiday(models.Model):
             raise ValidationError('无法撤销')
         self.write({'state': 'draft'})
 
-    @api.multi
-    def unlink(self):
-        raise ValidationError('错误!')
+    # @api.multi
+    # def unlink(self):
+    #     raise ValidationError('错误!')
 
