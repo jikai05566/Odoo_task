@@ -27,3 +27,14 @@
 建立一个用户组，发假用户组，只有在这个用户组的用户才能看到发假菜单并实际发假（system无视权限），其他模型的权限对所有用户开发（ir.model.access）
 员工的删除行为为逻辑删除，不在数据库中删除，而是将员工的active字段置为False
 每个用户只能看到自己创建的发假单（ir.rule）
+
+ 
+第五天：
+解释下odoo的以下概念，以及为何要这样设计
+model：
+fields：
+wizard：
+one2many和many2one之间的关系：
+ir.model.access、ir.rule：
+compute字段的意义，以及该如何用：
+理解下odoo的xml、csv插入数据到系统的机制（可选）
