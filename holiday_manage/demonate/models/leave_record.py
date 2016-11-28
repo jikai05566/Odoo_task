@@ -4,9 +4,9 @@ from openerp import models, fields, api
 
 
 class LeaveRecord(models.Model):
-    '''
+    """
     请假记录
-    '''
+    """
     _description = 'Leave Record'
     _name = 'leave.record'
 
