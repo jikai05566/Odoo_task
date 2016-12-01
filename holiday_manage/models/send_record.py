@@ -13,7 +13,7 @@ class SendRecord(models.Model):
     send_date = fields.Date(string='发假时间', required=True)
     employee_id = fields.Many2one('hr.employee', string='员工姓名')
     send_record_day = fields.Char(string='发假天数')
-    state = fields.Selection([('draft', '草稿'),
-                              ('done', '完成')], string='State')
+    state = fields.Selection([('draft', '已撤销'),
+                              ('done', '已完成')], string='状态')
     send_id = fields.Many2one('holiday')
 

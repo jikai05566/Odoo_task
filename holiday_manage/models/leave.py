@@ -33,7 +33,7 @@ class Leave(models.Model):
         for record in self:
             # 校验员工的可发假天数，当发假天数不足以请假的时候不准请假
             if record.leave_count > record.employee_id.holiday_count:
-                raise ValidationError('Error')
+                raise ValidationError('可用天数不足')
 
             record.write({'state': 'done'})
             # 每次确认请假，将这条记录传入record表中

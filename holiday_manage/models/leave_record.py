@@ -13,8 +13,8 @@ class LeaveRecord(models.Model):
     leave_date = fields.Date(string='请假日期', required=True)
     employee_id = fields.Many2one('hr.employee', string='员工姓名')
     leave_record_day = fields.Char(string='请假天数')
-    state = fields.Selection([('draft', '草稿'),
-                              ('done', '完成')], string='State')
+    state = fields.Selection([('draft', '已撤销'),
+                              ('done', '已完成')], string='状态')
     leave_id = fields.Many2one('leave')
 
 
