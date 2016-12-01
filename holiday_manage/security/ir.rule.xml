@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="employee" model="ir.rule">
+            <field name="name">员工信息表</field>
+            <field name="model_id" ref="model_hr_employee"/>
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+            <field name="groups" eval="[(4,ref('group_hr_employee_user'))]"/>
+        </record>
+        <record id="leave_user" model="ir.rule">
+            <field name="name">员工请假</field>
+            <field name="model_id" ref="model_leave"/>
+            <field name="domain_force">[('employee_id.create_uid', '=', user.id)]</field>
+            <field name="groups" eval="[(4,ref('group_leave_user'))]"/>
+        </record>
+    </data>
+</openerp>

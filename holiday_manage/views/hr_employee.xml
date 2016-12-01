@@ -10,10 +10,18 @@
                         <field name="name"/>
                         <field name="whether_send_holiday"/>
                         <field name="holiday_count"/>
-                        <field name="leave_record_ids" mode="tree">
+                        <field name="leave_record_ids">
                             <tree>
                                 <field name="leave_date"/>
                                 <field name="leave_record_day"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                        <field name="send_record_ids">
+                            <tree>
+                                <field name="send_date"/>
+                                <field name="send_record_day"/>
+                                <field name="state"/>
                             </tree>
                         </field>
                     </group>
@@ -29,6 +37,7 @@
                     <field name="whether_send_holiday"/>
                     <field name="holiday_count"/>
                     <field name="leave_record_ids"/>
+                    <field name="send_record_ids"/>
                 </tree>
             </field>
         </record>
@@ -41,6 +50,6 @@
         </record>
         <menuitem id="menu_first" name="员工" sequence="1"/>
         <menuitem id="menu_second" name="员工信息" sequence="1" parent="menu_first"/>
-        <menuitem id="menu_third" name="员工表" sequence="1" parent ="menu_second" action="action_hr_employee"/>
+        <menuitem id="menu_third" name="员工表" sequence="1" parent="menu_second" action="action_hr_employee"/>
     </data>
 </openerp>

@@ -4,7 +4,7 @@
         <record id="seq_holiday" model="ir.sequence">
             <field name="name">send.holiday</field>
             <field name="code">holiday</field>
-            <field name="padding">8</field>
+            <field name="padding">2</field>
             <field name="initial" eval="True"/>
         </record>
     </data>

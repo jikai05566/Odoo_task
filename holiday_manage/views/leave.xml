@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="leave_form" model="ir.ui.view">
+            <field name="name">leave form</field>
+            <field name="model">leave</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="do_confirm" string="请假" type="object"
+                                attrs="{'invisible':[('state', '=', 'done')]}" class="oe_highlight"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <group>
+                        <field name="employee_id" attrs="{'readonly': [('state', '=' , 'done')]}"/>
+                        <field name="leave_count" attrs="{'readonly': [('state', '=' , 'done')]}"/>
+                        <field name="leave_date" attrs="{'readonly': [('state', '=' , 'done')]}"/>
+                        <button name="do_cancel" string="取消" type="object"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="leave_tree" model="ir.ui.view">
+            <field name="name">leave tree</field>
+            <field name="model">leave</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_id"/>
+                    <field name="leave_count"/>
+                    <field name="leave_date"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft"/>
+
+                </tree>
+            </field>
+        </record>
+        <record id="action_leave" model="ir.actions.act_window">
+            <field name="name">请假</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">leave</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="menu_leave" name="请假" sequence="3" parent="menu_holiday_management"/>
+        <menuitem id="menu_leave_table" name="请假" sequence="3" parent="menu_leave" action="action_leave"/>
+
+    </data>
+</openerp>

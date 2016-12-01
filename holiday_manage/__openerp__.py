@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "demonate",
+    'name': "holiday_manage",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -10,8 +10,8 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "季凯",
+    'website': "http://www.eroad.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
@@ -28,12 +28,11 @@
         'security/ir.rule.xml',
         'security/ir.model.access.xml',
 
-        'views/views.xml',
-        'views/templates.xml',
         'views/hr_employee.xml',
         'views/holiday.xml',
+        'views/leave.xml',
         'views/ir_sequence_data.xml',
-        'wizard/leave_menu.xml',
+        # 'wizard/leave_menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

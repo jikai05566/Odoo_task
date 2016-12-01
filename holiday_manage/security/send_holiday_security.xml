@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="group_send_holiday" model="res.groups">
+            <field name="name">发假组</field>
+        </record>
+        <record id="group_hr_employee_user" model="res.groups">
+            <field name="name">普通员工信息组</field>
+        </record>
+        <record id="group_hr_employee_manager" model="res.groups">
+            <field name="name">高级员工信息组</field>
+        </record>
+        <record id="group_leave_user" model="res.groups">
+            <field name="name">普通员工请假组</field>
+        </record>
+        <record id="group_leave_manager" model="res.groups">
+            <field name="name">高级请假组</field>
+        </record>
+    </data>
+</openerp>
